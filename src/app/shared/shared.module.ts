@@ -9,9 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { FullnamePipe } from './pipes/fullname.pipe';
+import { FormErrorsPipe } from './pipes/form-errors.pipe';
 
 @NgModule({
-  declarations: [FullnamePipe],
+  declarations: [FullnamePipe, FormErrorsPipe],
   imports: [CommonModule],
   exports: [
     MatButtonModule,
@@ -22,6 +23,7 @@ import { FullnamePipe } from './pipes/fullname.pipe';
     MatFormFieldModule,
     MatDialogModule,
     FullnamePipe,
+    FormErrorsPipe,
     MatTableModule,
   ],
 })

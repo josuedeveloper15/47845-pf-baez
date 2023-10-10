@@ -17,7 +17,10 @@ export class UsersDialogComponent {
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      email: [
+        '',
+        [Validators.required, Validators.email, Validators.minLength(10)],
+      ],
     });
   }
 
