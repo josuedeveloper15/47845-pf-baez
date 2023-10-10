@@ -1,7 +1,8 @@
-<button (click)="openUsersDialog()" mat-flat-button color="primary" >
+<button (click)="openUsersDialog()" mat-flat-button color="primary">
   <mat-icon>add</mat-icon>
   Crear usuario
 </button>
 
+<!-- {{ testUser | fullname : "lowercase" }} -->
 
-{{ userName }}
+<app-users-table [dataSource]="users"></app-users-table>
