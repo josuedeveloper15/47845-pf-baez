@@ -34,11 +34,48 @@ export class UsersComponent {
       .afterClosed()
       .subscribe({
         next: (v) => {
-          console.log('VALOR: ', v);
           if (!!v) {
-            this.userName = v;
+            this.users = [
+              ...this.users,
+              {
+                ...v,
+                id: new Date().getTime(),
+              },
+            ];
           }
         },
       });
+  }
+
+  onEditUser(user: User): void {
+    this.matDialog
+      .open(UsersDialogComponent, {
+        data: user,
+      })
+      .afterClosed()
+      .subscribe({
+        next: (v) => {
+          if (!!v) {
+            // CREANDO UNA COPIA DEL ARRAY ACTUAL
+            // const arrayNuevo = [...this.users];
+
+            // const indiceToEdit = arrayNuevo.findIndex((u) => u.id === user.id);
+
+            // arrayNuevo[indiceToEdit] = { ...arrayNuevo[indiceToEdit], ...v };
+
+            // this.users = [...arrayNuevo];
+
+            this.users = this.users.map((u) =>
+              u.id === user.id ? { ...u, ...v } : u
+            );
+          }
+        },
+      });
+  }
+
+  onDeleteUser(userId: number): void {
+    if (confirm('Esta seguro?')) {
+      this.users = this.users.filter((u) => u.id !== userId);
+    }
   }
 }
