@@ -10,6 +10,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class DashboardComponent {
   showFiller = false;
 
+  showHome = true;
+
   constructor(private translateService: TranslateService) {}
 
   changeLanguage(ev: MatSelectChange): void {

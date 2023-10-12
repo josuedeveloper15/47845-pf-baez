@@ -53,7 +53,10 @@
     <main style="padding: 1rem">
       <!-- PAGINA -->
       <!-- <app-forms></app-forms> -->
-      <app-users></app-users>
+      <!-- <app-users></app-users> -->
+
+      <button (click)="showHome = !showHome">Mostrar home</button>
+      <app-home *ngIf="showHome"></app-home>
     </main>
   </div>
   <!-- CONTENIDO -->

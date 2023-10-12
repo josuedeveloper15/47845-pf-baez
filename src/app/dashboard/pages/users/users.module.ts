@@ -8,6 +8,7 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
 import { UsersService } from './users.service';
 import { UsersBetterService } from './users-better.service';
 import { MockUsersService } from './mock-users.service';
+import { ApiUrl } from 'src/app/config/url.token';
 
 @NgModule({
   declarations: [UsersComponent, UsersDialogComponent, UsersTableComponent],
@@ -24,7 +25,14 @@ import { MockUsersService } from './mock-users.service';
       // Cuando se inyecte UsersService,
       provide: UsersService,
       // Enrealidad uses:
-      useClass: MockUsersService,
+      useClass: UsersService,
+    },
+
+    {
+      provide: ApiUrl,
+      useValue: {
+        url: 'http://localhost:34322/users',
+      },
     },
   ],
 })

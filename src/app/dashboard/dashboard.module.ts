@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { UsersModule } from './pages/users/users.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -26,6 +27,7 @@ import { SharedModule } from '../shared/shared.module';
     UsersModule,
     TranslateModule,
     SharedModule,
+    HomeModule,
   ],
   exports: [DashboardComponent],
 })

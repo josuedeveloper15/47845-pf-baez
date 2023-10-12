@@ -43,6 +43,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
         appearance: 'outline',
       },
     },
+
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } },
   ],
   bootstrap: [AppComponent],
