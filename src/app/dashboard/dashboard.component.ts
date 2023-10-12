@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   showFiller = false;
+
+  constructor(private translateService: TranslateService) {}
+
+  changeLanguage(ev: MatSelectChange): void {
+    this.translateService.use(ev.value);
+  }
 }

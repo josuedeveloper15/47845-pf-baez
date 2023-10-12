@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UsersDialogComponent } from './components/users-dialog/users-dialog.component';
 import { User } from './models';
+import { UsersService } from './users.service';
+import { UsersBetterService } from './users-better.service';
 
 @Component({
   selector: 'app-users',
@@ -11,22 +13,15 @@ import { User } from './models';
 export class UsersComponent {
   userName = '';
 
-  users: User[] = [
-    {
-      id: 1,
-      name: 'Naruto',
-      lastName: 'Uzumaki',
-      email: 'naruto@mail.com',
-    },
-    {
-      id: 2,
-      name: 'Sasuke',
-      lastName: 'Uchiha',
-      email: 'sasuke@mail.com',
-    },
-  ];
+  users: User[] = [];
 
-  constructor(private matDialog: MatDialog) {}
+  constructor(
+    private matDialog: MatDialog,
+    private usersService: UsersService // MockUsersService // private usersBetterService: UsersBetterService
+  ) {
+    this.users = this.usersService.getUsers();
+    // console.log(this.usersBetterService.getUsersWithProduct());
+  }
 
   openUsersDialog(): void {
     this.matDialog

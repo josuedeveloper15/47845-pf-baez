@@ -9,6 +9,8 @@ import { FormsModule as FormsPageModule } from './pages/forms/forms.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { UsersModule } from './pages/users/users.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -22,6 +24,8 @@ import { UsersModule } from './pages/users/users.module';
     MatToolbarModule,
     MatIconModule,
     UsersModule,
+    TranslateModule,
+    SharedModule,
   ],
   exports: [DashboardComponent],
 })

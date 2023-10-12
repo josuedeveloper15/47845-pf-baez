@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [FullnamePipe, FormErrorsPipe],
@@ -23,6 +24,7 @@ import { FormErrorsPipe } from './pipes/form-errors.pipe';
     MatFormFieldModule,
     MatDialogModule,
     FullnamePipe,
+    MatSelectModule,
     FormErrorsPipe,
     MatTableModule,
   ],
