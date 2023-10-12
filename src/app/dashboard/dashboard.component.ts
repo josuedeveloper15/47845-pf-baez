@@ -8,8 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  showFiller = false;
-
+  showSidebar = true;
+  style = 'bolder';
   showHome = true;
 
   constructor(private translateService: TranslateService) {}

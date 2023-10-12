@@ -1,0 +1,22 @@
+<!-- TOOLBAR -->
+<mat-toolbar class="flex justify-content-between" color="primary">
+  <div>
+    <button
+      (click)="toggleSidebar.emit()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span> My School </span>
+  </div>
+
+  <div style="width: 100px">
+    <mat-select>
+      <mat-option value="es">es</mat-option>
+      <mat-option value="en">en</mat-option>
+    </mat-select>
+  </div>
+</mat-toolbar>
+<!-- TOOLBAR -->

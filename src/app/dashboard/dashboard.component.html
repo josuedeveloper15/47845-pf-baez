@@ -1,62 +1,32 @@
 <!-- CONTENEDOR -->
 <mat-drawer-container class="example-container" autosize>
   <!-- SIDEBAR -->
-  <mat-drawer #drawer class="example-sidenav" mode="side" position="start">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
+  <mat-drawer
+    style="width: 200px"
+    [opened]="showSidebar"
+    #drawer
+    class="example-sidenav"
+    mode="side"
+    position="start"
+  >
+    <app-sidebar></app-sidebar>
   </mat-drawer>
   <!-- SIDEBAR -->
 
   <!-- CONTENIDO -->
   <div class="example-sidenav-content">
     <!-- TOOLBAR -->
-    <mat-toolbar color="primary">
-      <button
-        (click)="drawer.toggle()"
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with menu icon"
-      >
-        <mat-icon>menu</mat-icon>
-      </button>
-
-      <span>
-        {{ "hello" | translate }}
-      </span>
-
-      <span class="example-spacer"></span>
-      <button
-        mat-icon-button
-        class="example-icon favorite-icon"
-        aria-label="Example icon-button with heart icon"
-      >
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with share icon"
-      >
-        <mat-icon>share</mat-icon>
-      </button>
-      <mat-select (selectionChange)="changeLanguage($event)">
-        <mat-option value="es">es</mat-option>
-        <mat-option value="en">en</mat-option>
-      </mat-select>
-    </mat-toolbar>
-    <!-- TOOLBAR -->
+    <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"></app-toolbar>
 
     <!-- <app-icons></app-icons> -->
     <main style="padding: 1rem">
+      <h1 [fontWeight]="'bolder'" appHeadline>Usuarios</h1>
       <!-- PAGINA -->
       <!-- <app-forms></app-forms> -->
-      <!-- <app-users></app-users> -->
+      <app-users></app-users>
 
-      <button (click)="showHome = !showHome">Mostrar home</button>
-      <app-home *ngIf="showHome"></app-home>
+      <!-- <button (click)="showHome = !showHome">Mostrar home</button> -->
+      <!-- <app-home *ngIf="showHome"></app-home> -->
     </main>
   </div>
   <!-- CONTENIDO -->

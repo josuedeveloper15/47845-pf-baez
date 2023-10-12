@@ -11,9 +11,10 @@ import { MatTableModule } from '@angular/material/table';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { MatSelectModule } from '@angular/material/select';
+import { HeadlineDirective } from './directives/headline.directive';
 
 @NgModule({
-  declarations: [FullnamePipe, FormErrorsPipe],
+  declarations: [FullnamePipe, FormErrorsPipe, HeadlineDirective],
   imports: [CommonModule],
   exports: [
     MatButtonModule,
@@ -27,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule,
     FormErrorsPipe,
     MatTableModule,
+    HeadlineDirective,
   ],
 })
 export class SharedModule {}
