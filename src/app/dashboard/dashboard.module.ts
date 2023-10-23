@@ -15,6 +15,7 @@ import { HomeModule } from './pages/home/home.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [DashboardComponent, ToolbarComponent, SidebarComponent],
   imports: [
@@ -31,6 +32,7 @@ import { MatListModule } from '@angular/material/list';
     SharedModule,
     HomeModule,
     MatListModule,
+    RouterModule,
   ],
   exports: [DashboardComponent],
 })
