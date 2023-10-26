@@ -1,0 +1,61 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>#</th>
+
+    <td mat-cell *matCellDef="let course">
+      {{ course.id }}
+    </td>
+  </ng-container>
+
+  <!-- Name  Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nombre</th>
+
+    <td mat-cell *matCellDef="let course">
+      {{ course.name }}
+    </td>
+  </ng-container>
+
+  <!-- Start Date Column -->
+  <ng-container matColumnDef="startDate">
+    <th mat-header-cell *matHeaderCellDef>Fecha de inicio</th>
+
+    <td mat-cell *matCellDef="let course">
+      {{ course.startDate }}
+    </td>
+  </ng-container>
+  <!-- End Date Column -->
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef>Fecha de fin</th>
+
+    <td mat-cell *matCellDef="let course">
+      {{ course.endDate }}
+    </td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+
+    <td mat-cell *matCellDef="let course">
+      <!-- <button (click)="goToDetail(course.id)" mat-icon-button color="accent">
+        <mat-icon>visibility</mat-icon>
+      </button>
+
+      <button (click)="editcourse.emit(course)" mat-icon-button color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button (click)="deletecourse.emit(course.id)" mat-icon-button color="warn">
+        <mat-icon>delete</mat-icon>
+      </button> -->
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
