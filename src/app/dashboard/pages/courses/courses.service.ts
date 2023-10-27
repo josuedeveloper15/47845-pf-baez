@@ -29,9 +29,17 @@ export class CoursesService {
   }
 
   editCourse$(id: number, payload: Course): Observable<Course[]> {
-    this.courses.push(payload);
     return of(
       this.courses.map((c) => (c.id === id ? { ...c, ...payload } : c))
     );
+  }
+
+  deleteCourse$(id: number): Observable<Course[]> {
+    this.courses = this.courses.filter((c) => c.id !== id);
+    return of(this.courses);
+  }
+
+  getCourseById$(id: number): Observable<Course | undefined> {
+    return of(this.courses.find((c) => c.id === id));
   }
 }

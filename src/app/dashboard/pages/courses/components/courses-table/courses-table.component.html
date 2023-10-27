@@ -25,7 +25,7 @@
     <th mat-header-cell *matHeaderCellDef>Fecha de inicio</th>
 
     <td mat-cell *matCellDef="let course">
-      {{ course.startDate }}
+      {{ course.startDate | date : "dd/MM/YYYY" }}
     </td>
   </ng-container>
   <!-- End Date Column -->
@@ -33,7 +33,7 @@
     <th mat-header-cell *matHeaderCellDef>Fecha de fin</th>
 
     <td mat-cell *matCellDef="let course">
-      {{ course.endDate }}
+      {{ course.endDate | date : "dd/MM/YYYY" }}
     </td>
   </ng-container>
 
@@ -42,17 +42,25 @@
     <th mat-header-cell *matHeaderCellDef>Acciones</th>
 
     <td mat-cell *matCellDef="let course">
-      <!-- <button (click)="goToDetail(course.id)" mat-icon-button color="accent">
+      <button [routerLink]="course.id" mat-icon-button color="accent">
         <mat-icon>visibility</mat-icon>
       </button>
 
-      <button (click)="editcourse.emit(course)" mat-icon-button color="primary">
-        <mat-icon>edit</mat-icon>
+      <button
+        (click)="deleteCourse.emit(course.id)"
+        mat-icon-button
+        color="warn"
+      >
+        <mat-icon>delete</mat-icon>
       </button>
 
-      <button (click)="deletecourse.emit(course.id)" mat-icon-button color="warn">
-        <mat-icon>delete</mat-icon>
-      </button> -->
+      <button
+        (click)="editCourse.emit(course.id)"
+        mat-icon-button
+        color="primary"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
     </td>
   </ng-container>
 

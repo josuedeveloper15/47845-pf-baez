@@ -5,10 +5,17 @@ import { CoursesComponent } from './courses.component';
 import { CoursesTableComponent } from './components/courses-table/courses-table.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoursesDialogComponent } from './components/courses-dialog/courses-dialog.component';
+import { CourseDetailComponent } from './components/course-detail/course-detail.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [CoursesComponent, CoursesTableComponent, CoursesDialogComponent],
-  imports: [CommonModule, SharedModule],
+  declarations: [
+    CoursesComponent,
+    CoursesTableComponent,
+    CoursesDialogComponent,
+    CourseDetailComponent,
+  ],
+  imports: [CommonModule, SharedModule, RouterModule],
   providers: [
     {
       provide: ApiUrl,
