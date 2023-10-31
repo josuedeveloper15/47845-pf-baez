@@ -9,11 +9,11 @@ const routes: Routes = [
     path: '',
     component: UsersComponent,
   },
-  {
-    // /users/detail...
-    path: 'detail/:id',
-    component: UsersDialogComponent,
-  },
+  // {
+  //   // /users/detail...
+  //   path: 'detail/:id',
+  //   component: UsersDialogComponent,
+  // },
 ];
 
 @NgModule({

@@ -21,6 +21,7 @@ import { DashboardComponent } from './dashboard.component';
 
           {
             path: 'courses',
+            /** hola_mundo */
             loadChildren: () =>
               import('./pages/courses/courses.module').then(
                 (m) => m.CoursesModule

@@ -30,7 +30,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     MatListModule,
 
     HomeModule,
-
     DashboardRoutingModule,
   ],
   exports: [DashboardComponent],
