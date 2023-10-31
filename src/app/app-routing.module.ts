@@ -11,33 +11,8 @@ import { CourseDetailComponent } from './dashboard/pages/courses/components/cour
 const routes: Routes = [
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        path: 'courses',
-        component: CoursesComponent,
-      },
-      {
-        path: 'courses/:id',
-        component: CourseDetailComponent,
-      },
-      {
-        path: 'users',
-        component: UsersComponent,
-      },
-      {
-        path: 'users/detail/:id',
-        component: UserDetailComponent,
-      },
-      {
-        path: '**',
-        redirectTo: 'home',
-      },
-    ],
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
     path: 'auth',

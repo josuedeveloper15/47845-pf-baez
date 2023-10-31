@@ -11,6 +11,7 @@ import { MockUsersService } from './mock-users.service';
 import { ApiUrl } from 'src/app/config/url.token';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { RouterModule } from '@angular/router';
+import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { RouterModule } from '@angular/router';
     UsersTableComponent,
     UserDetailComponent,
   ],
-  imports: [CommonModule, SharedModule, RouterModule],
+  imports: [CommonModule, SharedModule, UsersRoutingModule],
   exports: [UsersComponent],
 
   providers: [

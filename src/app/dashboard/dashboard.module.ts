@@ -15,6 +15,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { CoursesModule } from './pages/courses/courses.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 @NgModule({
   declarations: [DashboardComponent, ToolbarComponent, SidebarComponent],
   imports: [
@@ -24,13 +25,13 @@ import { CoursesModule } from './pages/courses/courses.module';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    UsersModule,
-    CoursesModule,
     TranslateModule,
     SharedModule,
-    HomeModule,
     MatListModule,
-    RouterModule,
+
+    HomeModule,
+
+    DashboardRoutingModule,
   ],
   exports: [DashboardComponent],
 })

@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { CoursesDialogComponent } from './components/courses-dialog/courses-dialog.component';
 import { CourseDetailComponent } from './components/course-detail/course-detail.component';
 import { RouterModule } from '@angular/router';
+import { CourseRoutingModule } from './courses-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { RouterModule } from '@angular/router';
     CoursesDialogComponent,
     CourseDetailComponent,
   ],
-  imports: [CommonModule, SharedModule, RouterModule],
+  imports: [CommonModule, SharedModule, CourseRoutingModule],
   providers: [
     {
       provide: ApiUrl,
