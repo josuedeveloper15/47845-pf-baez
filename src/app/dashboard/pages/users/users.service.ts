@@ -14,19 +14,6 @@ export class UsersService {
   }
 
   getUsers(): User[] {
-    return [
-      {
-        id: 1,
-        name: 'Naruto',
-        lastName: 'Uzumaki',
-        email: 'naruto@mail.com',
-      },
-      {
-        id: 2,
-        name: 'Sasuke',
-        lastName: 'Uchiha',
-        email: 'sasuke@mail.com',
-      },
-    ];
+    return [];
   }
 }

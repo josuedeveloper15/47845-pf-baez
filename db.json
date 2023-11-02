@@ -10,5 +10,15 @@
       "id": 1
     }
   ],
-  "courses": []
+  "courses": [
+    {
+      "name": "admin",
+      "lastName": "admin",
+      "email": "fake@mail.com",
+      "password": "123456",
+      "token": "jgfdsSfvcdskjdsfDSF435324ikdsad",
+      "role": "ADMIN",
+      "id": 1
+    }
+  ]
 }

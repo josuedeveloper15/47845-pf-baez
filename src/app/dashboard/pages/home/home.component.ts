@@ -64,14 +64,7 @@ export class HomeComponent implements OnDestroy {
   async getUsers(): Promise<void> {
     this.loading = true;
     const getUsersPromise = new Promise((resolve, reject) => {
-      const users: User[] = [
-        {
-          id: 1,
-          name: 'goku',
-          email: 'goku@mail.com',
-          lastName: 'son',
-        },
-      ];
+      const users: User[] = [];
       setTimeout(() => {
         resolve(users);
       }, 5000);
