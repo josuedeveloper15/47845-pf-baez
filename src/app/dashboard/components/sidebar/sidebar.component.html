@@ -1,13 +1,31 @@
+<div style="background-color: aquamarine">
+  <p>
+    {{ fullName$ | async }}
+    <br />
+    {{ email$ | async }}
+  </p>
+</div>
+
 <mat-nav-list>
   <!-- /dashboard me llevara a /dashboard/home -->
   <mat-list-item routerLink="home">
     <a>Home</a>
   </mat-list-item>
 
-  <mat-list-item routerLink="users" [activated]="true">
+  <mat-list-item
+    routerLink="users"
+    routerLinkActive
+    #usuariosLink="routerLinkActive"
+    [activated]="usuariosLink.isActive"
+  >
     <a>Usuarios</a>
   </mat-list-item>
-  <mat-list-item routerLink="courses">
+  <mat-list-item
+    routerLink="courses"
+    routerLinkActive
+    #cursosLink="routerLinkActive"
+    [activated]="cursosLink.isActive"
+  >
     <a>Cursos</a>
   </mat-list-item>
   <mat-list-item>

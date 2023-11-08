@@ -8,17 +8,31 @@
       "token": "jgfdsSfvcdskjdsfDSF435324ikdsad",
       "role": "ADMIN",
       "id": 1
-    }
-  ],
-  "courses": [
+    },
     {
-      "name": "admin",
-      "lastName": "admin",
+      "name": "TOMAS",
+      "lastName": "GONZALES",
       "email": "fake@mail.com",
       "password": "123456",
-      "token": "jgfdsSfvcdskjdsfDSF435324ikdsad",
+      "token": "gfldkgldfgjhfdjgndfsadasdasdasdas",
       "role": "ADMIN",
-      "id": 1
+      "id": 2
+    },
+    {
+      "name": "USUARIOPRUEBA",
+      "lastName": "admin",
+      "email": "fake23@mail.com",
+      "password": "123456",
+      "token": "dfghdfgdfgdf",
+      "role": "ADMIN",
+      "id": 3
+    },
+    {
+      "name": "probando",
+      "lastName": "editado",
+      "email": "josubaez@gmail.com",
+      "id": 4
     }
-  ]
+  ],
+  "courses": []
 }

@@ -1,6 +1,6 @@
 <h1 [fontWeight]="'bolder'" appHeadline>Usuarios</h1>
 
-<button (click)="openUsersDialog()" mat-flat-button color="primary">
+<button (click)="addUser()" mat-flat-button color="primary">
   <mat-icon>add</mat-icon>
   Crear usuario
 </button>
@@ -8,7 +8,7 @@
 <!-- {{ testUser | fullname : "lowercase" }} -->
 
 <app-users-table
-  [dataSource]="users"
+  [dataSource]="(users$ | async) || []"
   (editUser)="onEditUser($event)"
   (deleteUser)="onDeleteUser($event)"
 ></app-users-table>
