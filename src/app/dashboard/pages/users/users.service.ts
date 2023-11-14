@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from './models';
 import { HttpClient } from '@angular/common/http';
-import { Observable, concatMap } from 'rxjs';
+import { Observable, concatMap, map } from 'rxjs';
 import { environment } from 'src/environments/environment.local';
 @Injectable({
   providedIn: 'root',
@@ -23,5 +23,14 @@ export class UsersService {
     return this.httpClient
       .put<User>(`${environment.baseUrl}/users/${userId}`, payload)
       .pipe(concatMap(() => this.getUsers()));
+  }
+
+  deleteUser(id: number): Observable<User[]> {
+    return this.httpClient
+      .delete<Object>(`${environment.baseUrl}/users/${id}`)
+      .pipe(
+        // map(() =>  this.getUsers())
+        concatMap(() => this.getUsers())
+      );
   }
 }

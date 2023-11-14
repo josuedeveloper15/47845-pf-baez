@@ -62,6 +62,7 @@ export class UsersComponent {
 
   onDeleteUser(userId: number): void {
     if (confirm('Esta seguro?')) {
+      this.users$ = this.usersService.deleteUser(userId);
       // this.users = this.users.filter((u) => u.id !== userId);
     }
   }

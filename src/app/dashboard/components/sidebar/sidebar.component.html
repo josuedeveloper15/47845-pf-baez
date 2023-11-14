@@ -31,7 +31,12 @@
   <mat-list-item>
     <a>Alumnos</a>
   </mat-list-item>
-  <mat-list-item>
+  <mat-list-item
+    routerLink="enrollments"
+    routerLinkActive
+    #enrollmentsLink="routerLinkActive"
+    [activated]="enrollmentsLink.isActive"
+  >
     <a>Inscripciones</a>
   </mat-list-item>
   <mat-list-item (click)="logout()">
