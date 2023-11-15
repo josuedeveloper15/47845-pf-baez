@@ -9,9 +9,10 @@ import { enrollmentFeature } from './store/enrollment.reducer';
 import { EnrollmentsComponent } from './enrollments.component';
 import { EnrollmentsTableComponent } from './components/enrollments-table/enrollments-table.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { EnrollmentDialogComponent } from './components/enrollment-dialog/enrollment-dialog.component';
 
 @NgModule({
-  declarations: [EnrollmentsComponent, EnrollmentsTableComponent],
+  declarations: [EnrollmentsComponent, EnrollmentsTableComponent, EnrollmentDialogComponent],
   imports: [
     CommonModule,
     EnrollmentsRoutingModule,
