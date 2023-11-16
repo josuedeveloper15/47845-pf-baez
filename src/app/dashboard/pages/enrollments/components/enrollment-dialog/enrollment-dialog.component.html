@@ -1,24 +1,41 @@
+<h1 mat-dialog-title>Crear inscripcion</h1>
+
 <div mat-dialog-content>
-  <form class="row">
-    <div class="col-6">
-      <mat-form-field class="w-100">
-        <mat-label>Curso</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let course of courseOptions$ | async">{{
-            course.name
-          }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="col-6">
-      <mat-form-field class="w-100">
-        <mat-label>Alumno</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let student of studentOptions$ | async"
-            >{{ student.name }} {{ student.lastName }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-    </div>
-  </form>
+  <ng-container *ngIf="isLoading$ | async; else formulario">
+    Cargando...
+  </ng-container>
+  <ng-template #formulario>
+    <form class="row">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Curso</mat-label>
+          <mat-select [formControl]="courseIdControl">
+            <mat-option
+              [value]="course.id"
+              *ngFor="let course of courseOptions$ | async"
+              >{{ course.name }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Alumno</mat-label>
+          <mat-select [formControl]="userIdControl">
+            <mat-option
+              [value]="student.id"
+              *ngFor="let student of studentOptions$ | async"
+              >{{ student.name }} {{ student.lastName }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+    {{ enrollmentForm.value | json }}
+  </ng-template>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-dialog-close mat-button type="button">Cancelar</button>
+  <button (click)="onSubmit()" mat-button type="button">Guardar</button>
 </div>

@@ -38,11 +38,13 @@ export class AuthService {
       )
       .subscribe({
         next: (response) => {
-          if (!response.length) {
-            alert('Usuario o contrasena invalidos');
-          } else {
-            const authUser = response[0];
+          const authUser = response[0];
 
+          if (!authUser) {
+            alert('Usuario o contrasena invalidos');
+          } else if (authUser?.role === 'STUDENT') {
+            alert('No tienes permiso para acceder');
+          } else {
             this.handleAuthUser(authUser);
 
             this.router.navigate(['/dashboard/home']);
